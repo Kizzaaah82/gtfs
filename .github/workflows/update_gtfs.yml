@@ -17,16 +17,16 @@ jobs:
         run: |
           curl -L -o windsor-gtfs.zip https://opendata.citywindsor.ca/Uploads/google_transit.zip
 
-      - name: Unzip GTFS files
+      - name: Unzip GTFS files into root
         run: |
-          mkdir -p gtfs/windsor
-          unzip -o windsor-gtfs.zip -d gtfs/windsor
+          unzip -o windsor-gtfs.zip -d .
 
       - name: Commit updated GTFS files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add gtfs/windsor/*.txt
-          git commit -am "ci: force update Windsor GTFS feed (daily sync)" || echo "No changes to commit"
+          git add *.txt
+          git commit -am "ci: update Windsor GTFS feed in root directory" || echo "No changes to commit"
           git push
+
 
