@@ -27,4 +27,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add gtfs/windsor/*.txt
-          git diff --quiet && echo "No changes, skipping commit." || (git commit -m "ci: update Windsor GTFS feed (automated)" && git push)
+          git commit -am "ci: force update Windsor GTFS feed (daily sync)" || echo "No changes to commit"
+git push
+
