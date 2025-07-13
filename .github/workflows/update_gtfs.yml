@@ -2,7 +2,7 @@ name: Update Windsor GTFS Feed
 
 on:
   schedule:
-    - cron: '0 6 * * 0,4'  # Sunday & Thursday at 2am EDT (UTC 6)
+    - cron: '0 6 * * 0,4'  # Sunday (0) & Thursday (4) at 2am EDT (UTC 6)
   workflow_dispatch:
 
 jobs:
@@ -23,9 +23,11 @@ jobs:
         run: |
           rm -f agency.txt calendar.txt calendar_dates.txt fare_attributes.txt fare_rules.txt feed_info.txt last_sync.txt routes.txt shapes.txt stop_times.txt stops.txt trips.txt
 
-      - name: Unzip GTFS files into root
+      - name: Unzip GTFS files properly
         run: |
-          unzip -o windsor-gtfs.zip -d .
+          unzip -o windsor-gtfs.zip -d temp_gtfs
+          cp -f temp_gtfs/google_transit/*.txt .
+          rm -rf temp_gtfs
 
       - name: Delete the ZIP file
         run: |
