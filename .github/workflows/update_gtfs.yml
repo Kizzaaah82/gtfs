@@ -26,8 +26,9 @@ jobs:
       - name: Unzip GTFS files properly
         run: |
           unzip -o windsor-gtfs.zip -d temp_gtfs
-          cp -f temp_gtfs/google_transit/*.txt .
+          cp -f temp_gtfs/*.txt .
           rm -rf temp_gtfs
+
 
       - name: Delete the ZIP file
         run: |
