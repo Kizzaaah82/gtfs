@@ -3,7 +3,7 @@ name: Update Windsor GTFS Feed
 on:
   schedule:
     - cron: '0 6 * * 0,4'  # Sunday & Thursday at 2am EDT (UTC 6)
-  workflow_dispatch:        # lets you run it manually too
+  workflow_dispatch:
 
 jobs:
   update-gtfs:
@@ -19,14 +19,17 @@ jobs:
         run: |
           curl -L -o windsor-gtfs.zip https://opendata.citywindsor.ca/Uploads/google_transit.zip
 
-      - name: Delete all existing GTFS files
+      - name: Delete existing GTFS text files (but keep workflow folder)
         run: |
-          rm -f *.txt
-          echo "🧨 Old GTFS files purged."
+          rm -f agency.txt calendar.txt calendar_dates.txt fare_attributes.txt fare_rules.txt feed_info.txt last_sync.txt routes.txt shapes.txt stop_times.txt stops.txt trips.txt
 
       - name: Unzip GTFS files into root
         run: |
           unzip -o windsor-gtfs.zip -d .
+
+      - name: Delete the ZIP file
+        run: |
+          rm -f windsor-gtfs.zip
 
       - name: Add last sync timestamp
         run: |
