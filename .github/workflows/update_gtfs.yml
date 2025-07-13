@@ -2,31 +2,40 @@ name: Update Windsor GTFS Feed
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # UTC 6:00 = 2am EDT
-  workflow_dispatch:      # allows manual runs
+    - cron: '0 6 * * 0,4'  # Sunday & Thursday at 2am EDT (UTC 6)
+  workflow_dispatch:        # lets you run it manually too
 
 jobs:
   update-gtfs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repo with PAT
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Download GTFS ZIP
         run: |
           curl -L -o windsor-gtfs.zip https://opendata.citywindsor.ca/Uploads/google_transit.zip
 
+      - name: Delete all existing GTFS files
+        run: |
+          rm -f *.txt
+          echo "🧨 Old GTFS files purged."
+
       - name: Unzip GTFS files into root
         run: |
           unzip -o windsor-gtfs.zip -d .
 
-      - name: Commit updated GTFS files
+      - name: Add last sync timestamp
+        run: |
+          echo "Last GTFS sync: $(date -u)" > last_sync.txt
+
+      - name: Force-commit fresh GTFS snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add *.txt
-          git commit -am "ci: update Windsor GTFS feed in root directory" || echo "No changes to commit"
+          git add -A
+          git commit -m "🔥 Forced full GTFS snapshot $(date -u)" || echo "No changes to commit"
           git push
-
-
