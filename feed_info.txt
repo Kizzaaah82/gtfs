@@ -1,2 +1,2 @@
 feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version
-Strategic Mapping Inc.,http://www.mapstrat.com,en,20250720,20251124,7665f339-1e66-4d7a-8914-97f146b82cf5
+Strategic Mapping Inc.,http://www.mapstrat.com,en,20250720,20251125,c7132d3a-1305-449f-b9dd-6eabea5e2c4e
