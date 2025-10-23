@@ -1418,6 +1418,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 199956,2614,Tecumseh at Robinet,,42.31331355,-82.90673708,,,0,,1,
 199957,2615,Tecumseh at Clover,,42.31381404,-82.91170131,,,0,,1,
 199958,2616,Tecumseh at Gus Revenberg,,42.31407866,-82.91517939,,,0,,1,
+199928,2384,Tecumseh at Forest Glade,,42.3139252,-82.91622148,,,0,,1,
 200023,0100,Foster at Turner,,42.2760214796283,-82.9785323000187,,,0,,1,
 200024,0101,Turner at Seymour,,42.2782353006142,-82.9801112361854,,,0,,1,
 200025,0102,EC Row Ave at Hallmark,,42.2818930055552,-82.9885916479963,,,0,,1,
@@ -1455,4 +1456,3 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 176209,2452,Geraedts at Sportsplex,,42.251123,-83.020847,,,0,,1,
 176212,2456,Grand Marais at St.Patrick's,,42.264486,-83.034824,,,0,,1,
 199918,2664,Parent at Tecumseh,,42.29954996,-83.01162812,,,0,,1,
-199928,2384,Tecumseh at Forest Glade,,42.3139252,-82.91622148,,,0,,1,
