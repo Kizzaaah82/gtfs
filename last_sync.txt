@@ -1,1 +1,1 @@
-Last GTFS sync: Thu Oct 30 06:01:05 UTC 2025
+Last GTFS sync: Sun Nov  2 06:00:34 UTC 2025
