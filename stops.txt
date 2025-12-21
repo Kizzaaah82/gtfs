@@ -1340,6 +1340,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 176225,2414,Daytona at Manitoba,,42.28124,-83.052849,,,0,,1,
 176226,2415,Prince at Hillcrest,,42.285608,-83.058367,,,0,,1,
 176227,2416,Prince at Connaught,,42.286375,-83.06148,,,0,,1,
+199918,2664,Northwood at Dominion,,42.276895,-83.032361,,,0,,1,
+200001,2685,Northwood at Everts,,42.275954,-83.034987,,,0,,1,
 199928,2384,Tecumseh at Forest Glade,,42.3139252,-82.91622148,,,0,,1,
 199959,2395,Tecumseh at Clover,,42.31344936,-82.91003491,,,0,,1,
 199960,2405,Tecumseh at Robinet,,42.31301173,-82.90583606,,,0,,1,
@@ -1449,4 +1451,3 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 124254,RGTE,ROSEVILLE GARDEN AND TECUMSEH,,42.31157,-82.944319,,,0,,1,
 176202,2445,Rankin at Norfolk,,42.261692,-83.031083,,,0,,1,
 176203,2446,Rankin at Liberty,,42.258753,-83.029197,,,0,,1,
-199918,2664,Parent at Tecumseh,,42.29954996,-83.01162812,,,0,,1,
