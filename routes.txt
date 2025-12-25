@@ -17,4 +17,3 @@ route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_
 5522,1,418X,418 EXPRESS,418X,3,,FF8000,000000
 6477,1,305,ROUTE 305,305 South,3,,00E6A9,000000
 7225,1,250,ROUTE 250,250 West,3,,8400A8,FFFFFF
-7226,1,1000,ROUTE 1000,1000,3,,FF8040,000000
